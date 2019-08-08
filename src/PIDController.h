@@ -1,6 +1,12 @@
 #ifndef PIDControllerLib
 #define PIDControllerLib
 
+#if (ARDUINO >= 100)
+  #include "Arduino.h"
+#else
+  #include "WProgram.h"
+#endif
+
 #define GRAPH     "graph"
 #define NOGRAPH   "nograph"
 #define VERBOSE   "verbose"
