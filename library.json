@@ -1,0 +1,16 @@
+{
+    "name" : "kbide-PID-library",
+    "title": "PID library",
+    "keywords": "esp32,PID",
+    "description": "PID library for KB-IDE",
+    "git": "https://github.com/apinuntong/kbide-PID-library",
+    "author": "Maker Asia",
+    "email": "apinun.tong@gmail.com",
+    "url": "http://www.kbide.org",
+    "version": "1.0.0",
+    "board" : "",
+    "platform": ["arduino-esp32"],
+    "license": "",
+    "image" : "/static/tong.png",
+    "homepage": "http://www.kbide.org"
+}
