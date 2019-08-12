@@ -85,3 +85,59 @@ Blockly.Blocks['compute'] = {
  this.setHelpUrl("");
   }
 };
+
+Blockly.Blocks['limit'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Limit");
+    this.appendValueInput("min")
+        .setCheck(["float", "Number"])
+        .appendField("min");
+    this.appendValueInput("max")
+        .setCheck(["float", "Number"])
+        .appendField("max");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.Blocks['bitshift_left'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("bitshift left");
+    this.appendValueInput("input_s")
+        .setCheck("Number")
+        .appendField("input");
+    this.appendValueInput("number_of_bits")
+        .setCheck("Number")
+        .appendField("number_of_bits");
+    this.setInputsInline(true);
+    this.setOutput(true, "Number");
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+
+Blockly.Blocks['bitshift_right'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("bitshift right");
+    this.appendValueInput("input_right")
+        .setCheck("Number")
+        .appendField("input");
+    this.appendValueInput("number_of_bits_right")
+        .setCheck("Number")
+        .appendField("number_of_bits");
+    this.setInputsInline(true);
+    this.setOutput(true, "Number");
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};

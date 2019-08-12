@@ -42,7 +42,33 @@ Blockly.JavaScript['compute'] = function(block) {
   var dropdown_graph = block.getFieldValue('graph');
   var dropdown_verbose = block.getFieldValue('verbose');
   // TODO: Assemble JavaScript into code variable.
-  var code = `pid.compute(${value_input_raw},${dropdown_graph},${dropdown_verbose});\n`;
+  var code = `pid.compute(${value_input_raw},${dropdown_graph},${dropdown_verbose})`;
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
+
+Blockly.JavaScript['limit'] = function(block) {
+  var value_min = Blockly.JavaScript.valueToCode(block, 'min', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_max = Blockly.JavaScript.valueToCode(block, 'max', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = `pid.limit(${value_min},${value_max});\n`;
+  return code;
+};
+
+Blockly.JavaScript['bitshift_left'] = function(block) {
+  var value_input_s = Blockly.JavaScript.valueToCode(block, 'input_s', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_number_of_bits = Blockly.JavaScript.valueToCode(block, 'number_of_bits', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = `${value_input_s}<<${value_number_of_bits}\n`;
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
+
+Blockly.JavaScript['bitshift_right'] = function(block) {
+  var value_input_right = Blockly.JavaScript.valueToCode(block, 'input_right', Blockly.JavaScript.ORDER_ATOMIC);
+  var value_number_of_bits_right = Blockly.JavaScript.valueToCode(block, 'number_of_bits_right', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = `${value_input_right}<<${value_number_of_bits_right}\n`;
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
