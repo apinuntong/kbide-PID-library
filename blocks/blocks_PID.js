@@ -141,3 +141,16 @@ Blockly.Blocks['bitshift_right'] = {
  this.setHelpUrl("");
   }
 };
+Blockly.Blocks['tofloat'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("tofloat");
+    this.appendValueInput("data_float")
+    .setCheck(["Number", "float"]);
+    this.setInputsInline(true);
+    this.setOutput(true, "float");
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};

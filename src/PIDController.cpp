@@ -68,6 +68,9 @@ void PIDController::minimize (double newMinimize) {
 double PIDController::getOutput () {
   return output;
 }
+double PIDController::getError () {
+  return error;
+}
 
 
 double PIDController::compute (double sensor, String graph, String verbose) {
@@ -82,7 +85,7 @@ double PIDController::compute (double sensor, String graph, String verbose) {
   double timeChange = (double)(now - lastTime);
 
   // Calculate error (P, I and D)
-  double error = setPoint - sensor;
+  error = setPoint - sensor;
   errSum += error * timeChange;
   if (doLimit) {
     errSum = constrain(errSum, minOut * 1.1, maxOut * 1.1); 

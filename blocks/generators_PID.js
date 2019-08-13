@@ -68,7 +68,14 @@ Blockly.JavaScript['bitshift_right'] = function(block) {
   var value_input_right = Blockly.JavaScript.valueToCode(block, 'input_right', Blockly.JavaScript.ORDER_ATOMIC);
   var value_number_of_bits_right = Blockly.JavaScript.valueToCode(block, 'number_of_bits_right', Blockly.JavaScript.ORDER_ATOMIC);
   // TODO: Assemble JavaScript into code variable.
-  var code = `${value_input_right}<<${value_number_of_bits_right}\n`;
+  var code = `${value_input_right}>>${value_number_of_bits_right}\n`;
+  // TODO: Change ORDER_NONE to the correct strength.
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
+Blockly.JavaScript['tofloat'] = function(block) {
+  var value_data_float = Blockly.JavaScript.valueToCode(block, 'data_float', Blockly.JavaScript.ORDER_ATOMIC);
+  // TODO: Assemble JavaScript into code variable.
+  var code = `${value_data_float}`;
   // TODO: Change ORDER_NONE to the correct strength.
   return [code, Blockly.JavaScript.ORDER_NONE];
 };

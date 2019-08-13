@@ -29,6 +29,7 @@ class PIDController {
 
     // Methods - double, getters
     double getOutput();
+    double getError();
   private:
     // Methods
     void printGraph(double sensorInput, String verbose);
